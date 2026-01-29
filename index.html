@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>AURÉOL IMPERIA</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold-1: #f7e9a0;
+      --gold-2: #d4af37;
+      --gold-3: #b08d21;
+      --dark-bg: #050509;
+      --glass: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top, #0b0b12, var(--dark-bg));
+      color: #fef9e7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ================= HEADER ================= */
+    .header {
+      position: relative;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      background: #7a5a10;
+      background-size: 300% 300%;
+      animation: goldFlow 14s ease infinite;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/black-linen.png');
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.3rem, 4.5vw, 3.3rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-shadow:
+        0 0 12px rgba(0, 0, 0, 0.7),
+        0 0 28px rgba(212, 175, 55, 0.4);
+    }
+
+    .header p {
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fffdf2;
+      opacity: 0.95;
+    }
+
+    /* ================= SEPARATOR ================= */
+    .separator {
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--gold-1), transparent);
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.8);
+    }
+
+    /* ================= CONTENT ================= */
+    .content {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 1rem;
+      background: url('My tech images/logo.png') center / cover no-repeat fixed;
+    }
+
+    .content::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85)),
+        radial-gradient(circle at center, rgba(212,175,55,0.12), transparent 60%);
+      z-index: 0;
+    }
+
+    /* ================= GLASS CARD ================= */
+    .hero-card {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      width: 100%;
+      padding: 3rem 2.2rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+      backdrop-filter: blur(14px);
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow:
+        0 0 40px rgba(212,175,55,0.25),
+        0 30px 80px rgba(0,0,0,0.85);
+    }
+
+    .hero-card h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-1);
+      text-shadow: 0 0 12px rgba(212,175,55,0.6);
+    }
+
+    .hero-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      opacity: 0.9;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ================= CTA BUTTON ================= */
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 3rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #f8f7f5;
+      background:  #6b5603;
+      border: 1px solid rgba(255,255,255,0.4);
+     
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <header class="header">
+      <h1>Welcome to Auréol Imperia</h1>
+      <p>Technology crowned by gold</p>
+    </header>
+
+    <div class="separator"></div>
+
+    <section class="content">
+      <div class="hero-card">
+        <h2>The Golden Future</h2>
+        <p>
+          Where elegance meets innovation. Auréol Imperia blends premium design,
+          advanced technology, and timeless luxury into one powerful experience.
+        </p>
+        <a class="cta-button" href="about.html">Enter the Empire</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

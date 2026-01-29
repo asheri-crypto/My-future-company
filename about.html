@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – Auréol Imperia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #fef9e7;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .video-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.85)
+      );
+      z-index: -1;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .home-button {
+      display: inline-block;
+      padding: 0.7rem 2.4rem;
+      border-radius: 999px;
+      border: 1px solid #ffd700;
+      background: linear-gradient(135deg, #f7e9a0, #d4af37, #f1c40f);
+      color: #2b1c00;
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
+    }
+
+    .home-button:hover {
+      background: transparent;
+      color: #ffd700;
+      box-shadow: 0 0 26px rgba(255, 215, 0, 0.9);
+      transform: translateY(-2px);
+    }
+
+    .top-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      align-items: stretch;
+      margin-bottom: 3.5rem;
+    }
+
+    .info-column {
+      flex: 1 1 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.7rem;
+    }
+
+    .hero-image {
+      flex: 1 1 420px;
+      min-height: 700px;
+      border-radius: 26px;
+      background: url('My tech images/beauty.png') center/cover no-repeat;
+      box-shadow: 0 0 34px rgba(0, 0, 0, 0.85);
+    }
+
+    .glass-card {
+      padding: 1.6rem 1.9rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(14px);
+    }
+
+    .glass-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #ffd700;
+      margin-bottom: 0.4rem;
+    }
+
+    .glass-heading {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #fff8dc;
+    }
+
+    .glass-text {
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .products-section {
+      margin-top: 1rem;
+    }
+
+    .products-column {
+      display: flex;
+      flex-direction: column;
+      gap: 2.3rem;
+      margin-top: 1.5rem;
+    }
+
+    .product-card {
+      width: 100%;
+      border-radius: 24px;
+      background: rgba(5, 5, 10, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+      box-shadow: 0 0 26px rgba(0, 0, 0, 0.85);
+    }
+
+    .product-header {
+      padding: 1.4rem 2rem 0.9rem;
+    }
+
+    .product-title {
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-button {
+      display: inline-block;
+      padding: 0.8rem 2.6rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid currentColor;
+      background: transparent;
+    }
+
+    .product-image {
+      height: 700px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .luxury-title { color: #ffd700; }
+    .tech-title {
+      color: #4fd5ff;
+      text-shadow: 0 0 14px rgba(79, 213, 255, 0.9);
+    }
+
+    .luxury-image {
+      background-image: url('My tech images/luxuries.png');
+    }
+
+    .tech-image {
+      background-image: url('My tech images/technology.png');
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="My tech videos/gold.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+
+  <main>
+    <h1>About Auréol Imperia</h1>
+
+    <div class="top-bar">
+      <a class="home-button" href="index.html">Home</a>
+      <a class="home-button" href="luxury_products.html">Luxury</a>
+      <a class="home-button" href="tech_products.html">Technology</a>
+      <a class="home-button" href="connect.html">Connect</a>
+      <a class="home-button" href="event.html">Events</a>
+    </div>
+
+    <section class="top-section">
+      <h2 class="visually-hidden">Company Overview</h2>
+
+      <div class="info-column">
+        <div class="glass-card">
+          <div class="glass-title">Owner</div>
+          <div class="glass-heading">ASHERI LUCKY DAVID</div>
+          <p class="glass-text">
+            A student visionary building an empire where technology and luxury walk together, one golden line of code at a time.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-title">Mission</div>
+          <p class="glass-text">
+            To craft innovative technology experiences wrapped in timeless luxury, empowering people to feel crowned with confidence, creativity, and excellence in everything they do.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div class="glass-title">Vision</div>
+          <p class="glass-text">
+            To become the world’s most admired empire where gold-standard technology and refined elegance meet.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-image"></div>
+    </section>
+
+    <section class="products-section">
+      <h2 class="visually-hidden">Product Divisions</h2>
+
+      <div class="products-column">
+        <article class="product-card">
+          <div class="product-header">
+            <h3 class="product-title luxury-title">Luxurious Products</h3>
+            <a class="product-button" href="luxury_products.html">Explore the collection</a>
+          </div>
+          <div class="product-image luxury-image"></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-header">
+            <h3 class="product-title tech-title">Technology Products</h3>
+            <a class="product-button" href="tech_products.html">Enter the lab</a>
+          </div>
+          <div class="product-image tech-image"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+    <p> The &hearts; tag is a general container </p>
+
+</body>
+</html>

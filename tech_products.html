@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technological Division - Auréol Imperia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #f4f7ff;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      background: #02020b;
+    }
+
+    /* Background video */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .video-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top,
+        rgba(40, 0, 80, 0.55),
+        rgba(1, 4, 15, 0.96)
+      );
+      z-index: -1;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      text-align: center;
+      margin-bottom: 1.1rem;
+      color: #e5e9ff;
+      text-shadow:
+        0 0 16px rgba(0, 255, 255, 0.6),
+        0 0 26px rgba(144, 19, 254, 0.7);
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #7ad6ff;
+      margin-bottom: 2.3rem;
+    }
+
+    /* Top navigation */
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 0.6rem 2.1rem;
+      border-radius: 999px;
+      border: 1px solid #4fd5ff;
+      background: linear-gradient(135deg, rgba(79, 213, 255, 0.2), rgba(184, 41, 248, 0.35));
+      color: #e8f6ff;
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 0 18px rgba(79, 213, 255, 0.6);
+    }
+
+    .nav-button:hover {
+      background: transparent;
+      color: #7ad6ff;
+      box-shadow:
+        0 0 24px rgba(79, 213, 255, 0.95),
+        0 0 32px rgba(184, 41, 248, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Sections: alternating image + text */
+    .tech-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.7rem;
+      margin-bottom: 3rem;
+    }
+
+    .tech-section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .tech-text {
+      flex: 1 1 380px;
+    }
+
+    .tech-image-wrap {
+      flex: 1 1 380px;
+    }
+
+    .tech-image {
+      width: 100%;
+      height: 700px;
+      border-radius: 26px;
+      object-fit: cover;
+      box-shadow:
+        0 0 26px rgba(0, 255, 255, 0.5),
+        0 0 34px rgba(184, 41, 248, 0.6);
+    }
+
+    .tech-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #7ad6ff;
+      margin-bottom: 0.8rem;
+      text-shadow:
+        0 0 14px rgba(0, 255, 255, 0.7),
+        0 0 22px rgba(184, 41, 248, 0.7);
+    }
+
+    .tech-list {
+      list-style: none;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: #dbe6ff;
+    }
+
+    .tech-list li::before {
+      content: "▹";
+      color: #b829f8;
+      margin-right: 0.4rem;
+    }
+
+    .tech-tagline {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9aa9ff;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="My tech videos/tech1.mp4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+
+  <main>
+    <h1>Technological Division</h1>
+    <p class="subtitle">NEON INTELLIGENCE - FUTURE ENGINEERING</p>
+
+    <!-- Navigation: Home / About / Contact -->
+    <div class="top-bar">
+      <a class="nav-button" href="index.html">Home</a>
+      <a class="nav-button" href="about.html">About</a>
+      <a class="nav-button" href="connect.html">Connect</a>
+      <a class="nav-button" href="event.html">Events</a>
+    </div>
+
+    <!-- 1. Nanotechnology -->
+    <section class="tech-section">
+      <div class="tech-text">
+        <p class="tech-tagline">ATOMIC-SCALE ENGINEERING</p>
+        <h2 class="tech-title">Nanotechnology Systems</h2>
+        <ul class="tech-list">
+          <li>Nano-medical repair units for targeted cell healing and precision drug delivery.</li>
+          <li>Self-healing nano-materials for spacecraft, skyscrapers, and armor plating.</li>
+          <li>Adaptive nano-coatings: anti-radiation, anti-corrosion, stealth and invisibility skins.</li>
+          <li>Nano-structured ultra-dense batteries for extreme energy storage.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/nanotechnology.png" alt="Nanotechnology systems">
+      </div>
+    </section>
+
+    <!-- 2. Neurotechnology -->
+    <section class="tech-section reverse">
+      <div class="tech-text">
+        <p class="tech-tagline">MIND-MACHINE INTERFACES</p>
+        <h2 class="tech-title">Neurotechnology</h2>
+        <ul class="tech-list">
+          <li>Brain-computer interfaces that let humans control systems with pure thought.</li>
+          <li>Neural enhancement chips for boosted memory, focus, and learning speed.</li>
+          <li>Brain-controlled prosthetics restoring natural movement and precision.</li>
+          <li>Cognitive monitoring grids to detect disorders long before symptoms.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/neurotechnology.png" alt="Neurotechnology">
+      </div>
+    </section>
+
+    <!-- 3. Quantum Technology -->
+    <section class="tech-section">
+      <div class="tech-text">
+        <p class="tech-tagline">BEYOND CLASSICAL LIMITS</p>
+        <h2 class="tech-title">Quantum Technology</h2>
+        <ul class="tech-list">
+          <li>Quantum computers for simulation, optimization, and impossible-before calculations.</li>
+          <li>Unbreakable quantum encryption securing imperial-level communications.</li>
+          <li>Quantum sensors for ultra-precision navigation, imaging, and measurements.</li>
+          <li>Experimental quantum teleportation research platforms.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/quantumtechnology.png" alt="Quantum technology">
+      </div>
+    </section>
+
+    <!-- 4. Advanced AI Systems -->
+    <section class="tech-section reverse">
+      <div class="tech-text">
+        <p class="tech-tagline">INTELLIGENCE BEYOND ROUTINE</p>
+        <h2 class="tech-title">Artificial Intelligence Systems</h2>
+        <ul class="tech-list">
+          <li>General Artificial Intelligence cores for strategic reasoning and planning.</li>
+          <li>Autonomous scientific discovery AI that designs and tests new hypotheses.</li>
+          <li>Material-design AI that discovers never-seen alloys and composites.</li>
+          <li>AI pilots for deep-space navigation and mission prediction.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/artificialintelligence.png" alt="Artificial intelligence systems">
+      </div>
+    </section>
+
+    <!-- 5. Advanced Energy Technologies -->
+    <section class="tech-section">
+      <div class="tech-text">
+        <p class="tech-tagline">POWERING THE IMPERIA</p>
+        <h2 class="tech-title">Next-Generation Energy</h2>
+        <ul class="tech-list">
+          <li>Fusion reactor research cores for clean star-grade power.</li>
+          <li>Zero-point and antimatter energy storage concepts for far-future systems.</li>
+          <li>Planet-scale wireless energy transmission networks.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/advancedenergy.png" alt="Advanced energy technologies">
+      </div>
+    </section>
+
+    <!-- 6. Space & Satellite Systems -->
+    <section class="tech-section reverse">
+      <div class="tech-text">
+        <p class="tech-tagline">ORBITAL & DEEP-SPACE NETWORKS</p>
+        <h2 class="tech-title">Space & Satellite Systems</h2>
+        <ul class="tech-list">
+          <li>AI-controlled satellites for communications, mapping, and defense.</li>
+          <li>Quantum-linked satellites for instant, secure interplanetary messaging.</li>
+          <li>Climate and earth- core monitoring arrays watching the entire planet.</li>
+          <li>Deep-space relay constellations extending humanity's reach.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/spaceandsatellites.png" alt="Space and satellite systems">
+      </div>
+    </section>
+
+    <!-- 7. Universe Research Tools -->
+    <section class="tech-section">
+      <div class="tech-text">
+        <p class="tech-tagline">OBSERVING THE COSMOS</p>
+        <h2 class="tech-title">Universe Research Tools</h2>
+        <ul class="tech-list">
+          <li>Deep-space telescopes surpassing current generations in resolution.</li>
+          <li>Dark-matter detectors and cosmic radiation analyzers.</li>
+          <li>Exoplanet atmosphere scanners and gravitational-wave observatories.</li>
+          <li>Space-based particle accelerators and time-space distortion meters.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/universeresearch.png" alt="Universe research tools">
+      </div>
+    </section>
+
+    <!-- 8. Synthetic Biology -->
+    <section class="tech-section reverse">
+      <div class="tech-text">
+        <p class="tech-tagline">PROGRAMMING LIFE ITSELF</p>
+        <h2 class="tech-title">Synthetic Biology</h2>
+        <ul class="tech-list">
+          <li>Platforms for advanced gene editing and CRISPR++ therapies.</li>
+          <li>Artificial organs and lab-grown tissues for next-level medicine.</li>
+          <li>Longevity research systems targeting cellular aging.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/syntheticbiology.png" alt="Synthetic biology">
+      </div>
+    </section>
+
+    <!-- 9. Advanced Materials -->
+    <section class="tech-section">
+      <div class="tech-text">
+        <p class="tech-tagline">MATTER RE-INVENTED</p>
+        <h2 class="tech-title">Advanced Materials Science</h2>
+        <ul class="tech-list">
+          <li>Metamaterials that bend light and sound for cloaking and optics.</li>
+          <li>Ultra-light aerospace alloys and graphene-based architectures.</li>
+          <li>Radiation-proof and extreme-temperature materials for deep space.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/advancedmaterials.png" alt="Advanced materials science">
+      </div>
+    </section>
+
+    <!-- 10. Planetary & Climate Engineering -->
+    <section class="tech-section reverse">
+      <div class="tech-text">
+        <p class="tech-tagline">ENGINEERING WORLDS</p>
+        <h2 class="tech-title">Planetary & Climate Engineering</h2>
+        <ul class="tech-list">
+          <li>Weather-control research platforms and precision climate modeling.</li>
+          <li>Carbon-capture mega-systems and artificial ecosystem design.</li>
+          <li>Long-term terraforming concepts for off-Qworld colonies.</li>
+        </ul>
+      </div>
+      <div class="tech-image-wrap">
+        <img class="tech-image" src="My tech images/planetaryengineering.png" alt="Planetary and climate engineering">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
